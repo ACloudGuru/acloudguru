@@ -1,0 +1,18 @@
+AWS CLI commands:
+aws ec2 run instances --image-id ami-a1980f9b
+wait until running
+aws ec2 describe-instances
+aws ec2 create-tags --resources <instanceid> --tags Key=Name,Value=MagentoWeb1
+aws ec2 create-tags --resources <instanceid> --tags Key=Project,Value=Magento Key=Environment,Value=UAT
+aws ec2 describe-tags --filters Name=resource-id,Values=<resourceid>
+aws ec2 describe-tags --filters Name=resource-id,Values=<resourceid> --output table
+aws ec2 describe-instances --filters "Name=tag:Project,Values=Magento"
+aws ec2 terminate-instances --instance-ids <instanceid>
+
+S3
+aws s3api create-bucket --bucket acg-my-bucket-test-9999
+aws s3api put-bucket-tagging --bucket acg-my-bucket-test-9999 --tagging 'TagSet=[{Key=Project,Value=Magento}]'
+aws s3api get-bucket-tagging --bucket acg-my-bucket-test-9999
+aws s3api get-bucket-tagging --bucket acg-my-bucket-test-9999 —output table
+aws s3api get-bucket-tagging --bucket acg-my-bucket-test-9999 —output json
+aws s3api delete-bucket --bucket acg-my-bucket-test-9999
