@@ -1,5 +1,6 @@
 AWS CLI commands:
-aws ec2 run instances --image-id ami-a1980f9b
+aws configure set default.region us-west-2
+aws ec2 run-instances --image-id ami-422f9b22
 wait until running
 aws ec2 describe-instances
 aws ec2 create-tags --resources <instanceid> --tags Key=Name,Value=MagentoWeb1
